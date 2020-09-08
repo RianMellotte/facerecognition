@@ -93,7 +93,7 @@ onInputChange = (event) => {
 
 onSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    fetch('http://localhost:3000', {
+    fetch('https://infinite-refuge-16995.herokuapp.com', {
           method: 'post',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
@@ -103,7 +103,7 @@ onSubmit = () => {
     .then(response => response.json())
     .then(response => {
       if (response) {
-        fetch('http://localhost:3000', {
+        fetch('https://infinite-refuge-16995.herokuapp.com', {
           method: 'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
