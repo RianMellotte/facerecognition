@@ -24,7 +24,7 @@ class Register extends React.Component {
 	}
 
 	onSubmitSignIn = () => {
-		fetch('https://git.heroku.com/infinite-refuge-16995.git', {
+		fetch('https://infinite-refuge-16995.herokuapp.com/register', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
@@ -36,7 +36,7 @@ class Register extends React.Component {
 		.then(res => res.json())
 		.then(user => {
 			if (user) {
-				this.props.loadUser(user)
+				this.props.loadUser(user);
 				this.props.onRouteChange('home');
 			}
 		})
