@@ -93,7 +93,7 @@ onInputChange = (event) => {
 
 onSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    fetch('https://infinite-refuge-16995.herokuapp.com/imageurl', {
+    fetch('https://facerecognition411-backend.herokuapp.com/imageurl', {
           method: 'post',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
@@ -103,7 +103,7 @@ onSubmit = () => {
     .then(response => response.json())
     .then(response => {
       if (response) {
-        fetch('https://infinite-refuge-16995.herokuapp.com/image', {
+        fetch('https://facerecognition411-backend.herokuapp.com/image', {
           method: 'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
