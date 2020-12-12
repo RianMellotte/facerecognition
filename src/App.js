@@ -72,7 +72,7 @@ loadUser = (data) => {
 
 calculateFaceLocation = (data) => {
   console.log('1', data.outputs[0].data.regions.entries().region_info.bounding_box);
-  console.log('2', data.outputs[0].data.regions[]);
+  console.log('2');
   console.log('3', data.outputs[0].data.regions);
   console.log('4', data.outputs[0].data);
   console.log('5', data.outputs[0].data.regions[0-4]);
