@@ -82,8 +82,7 @@ calculateFaceLocation = (data) => {
     rightCol: width - (clarifaiFace.right_col * width),
     bottomRow: height - (clarifaiFace.bottom_row * height)
     }
-  }
-  
+ })
 
 
 displayFaceBox = (box) => {
