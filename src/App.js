@@ -75,7 +75,8 @@ calculateFaceLocation = (data) => {
   const width = Number(image.width);
   const height = Number(image.height);
   return data.outputs[0].data.regions.map(item => {
-      const clarifaiFace = item.region_info.bounding_box;  
+      const clarifaiFace = item.region_info.bounding_box;
+      console.log(item.region_info.bounding_box);  
       return {
         leftCol: clarifaiFace.left_col * width,
         topRow: clarifaiFace.top_row * height,
