@@ -71,17 +71,17 @@ loadUser = (data) => {
 
 
 calculateFaceLocation = (data) => {
-  const clarifaiFace = data.outputs[0].data.regions.forEach((item) => { 
-    return item.region_info.bounding_box});
   const image = document.getElementById('inputimage');
   const width = Number(image.width);
   const height = Number(image.height);
-  return {
-    leftCol: clarifaiFace.left_col * width,
-    topRow: clarifaiFace.top_row * height,
-    rightCol: width - (clarifaiFace.right_col * width),
-    bottomRow: height - (clarifaiFace.bottom_row * height)
-  }
+  return data.outputs[0].data.regions.forEach((item) => {
+      const clarifaiFace = item.region_info.bounding_box}  
+      return {
+        leftCol: clarifaiFace.left_col * width,
+        topRow: clarifaiFace.top_row * height,
+        rightCol: width - (clarifaiFace.right_col * width),
+        bottomRow: height - (clarifaiFace.bottom_row * height)
+      });
 }
 
 displayFaceBox = (box) => {
