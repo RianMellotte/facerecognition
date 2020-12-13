@@ -74,20 +74,20 @@ calculateFaceLocation = (data) => {
   const image = document.getElementById('inputimage');
   const width = Number(image.width);
   const height = Number(image.height);
-  return data.outputs[0].data.regions.map(item => {
-      const clarifaiFace = item.region_info.bounding_box;
-      console.log(item.region_info.bounding_box);  
-      return {
-        leftCol: clarifaiFace.left_col * width,
-        topRow: clarifaiFace.top_row * height,
-        rightCol: width - (clarifaiFace.right_col * width),
-        bottomRow: height - (clarifaiFace.bottom_row * height)
-      }
-    });
-}
+  data.outputs[0].data.regions.forEach(function (region) {
+    const clarifaiFace = region.region_info.bounuding_box;
+    return {
+    leftCol: clarifaiFace.left_col * width,
+    topRow: clarifaiFace.top_row * height,
+    rightCol: width - (clarifaiFace.right_col * width),
+    bottomRow: height - (clarifaiFace.bottom_row * height)
+    }
+  }
+  
+
 
 displayFaceBox = (box) => {
-  this.setState(box)}
+  this.setState(boc)
 
 onInputChange = (event) => {
     this.setState({input: event.target.value});
