@@ -75,11 +75,13 @@ calculateFaceLocation = (data) => {
   const width = Number(image.width);
   const height = Number(image.height);
   data.outputs[0].data.regions.forEach(function (region) {
+    let region.region_info.bounding_box = face
+    console.log(face)
     return {
-    leftCol: region.region_info.bounding_box.left_col * width,
-    topRow: region.region_info.bounding_box.top_row * height,
-    rightCol: width - (region.region_info.bounding_box.right_col * width),
-    bottomRow: height - (region.region_info.bounding_box.bottom_row * height)
+    leftCol: face.left_col * width,
+    topRow: face.top_row * height,
+    rightCol: width - (face.right_col * width),
+    bottomRow: height - (face.bottom_row * height)
     };
  })
 }
@@ -119,6 +121,7 @@ onSubmit = () => {
         })
         .catch(console.log)
       }
+      console.log(this.box)
       this.displayFaceBox(this.calculateFaceLocation(response))
     })
     .catch(err => console.log(err));
