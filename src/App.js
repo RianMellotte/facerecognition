@@ -74,7 +74,7 @@ calculateFaceLocation = (data) => {
   const image = document.getElementById('inputimage');
   const width = Number(image.width);
   const height = Number(image.height);
-  return data.outputs[0].data.regions.forEach(function (region) {
+  data.outputs[0].data.regions.forEach(function (region) {
     return {
     leftCol: region.region_info.bounding_box.left_col * width,
     topRow: region.region_info.bounding_box.top_row * height,
