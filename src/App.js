@@ -86,7 +86,7 @@ calculateFaceLocation = (data) => {
 
 
 displayFaceBox = (box) => {
-  this.setState({box: box}});
+  this.setState({box: box});
 }
 
 onInputChange = (event) => {
