@@ -77,10 +77,10 @@ calculateFaceLocation = (data) => {
   console.log(data.outputs[0].data.regions)
   data.outputs[0].data.regions.forEach(function (region) {
     return {
-    leftCol: region.region_info.bounuding_box.left_col * width,
-    topRow: region.region_info.bounuding_box.top_row * height,
-    rightCol: width - (region.region_info.bounuding_box.right_col * width),
-    bottomRow: height - (region.region_info.bounuding_box.bottom_row * height)
+    leftCol: region.region_info.bounding_box.left_col * width,
+    topRow: region.region_info.bounding_box.top_row * height,
+    rightCol: width - (region.region_info.bounding_box.right_col * width),
+    bottomRow: height - (region.region_info.bounding_box.bottom_row * height)
     };
  })
 }
