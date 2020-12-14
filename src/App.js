@@ -75,8 +75,8 @@ calculateFaceLocation = (data) => {
   const width = Number(image.width);
   const height = Number(image.height);
   data.outputs[0].data.regions.forEach(function (region) {
-    let region.region_info.bounding_box = face
-    console.log(face)
+    let face = region.region_info.bounding_box;
+    console.log(face);
     return {
     leftCol: face.left_col * width,
     topRow: face.top_row * height,
