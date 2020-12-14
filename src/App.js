@@ -81,7 +81,7 @@ calculateFaceLocation = (data) => {
     topRow: clarifaiFace.top_row * height,
     rightCol: width - (clarifaiFace.right_col * width),
     bottomRow: height - (clarifaiFace.bottom_row * height)
-    }
+    };
  })
 
 
@@ -130,7 +130,7 @@ onRouteChange = (route) => {
     this.setState({isSignedIn: true})
   }
   this.setState({route: route});
-} 
+}
 
 render() {
     const { isSignedIn, imageUrl, route, box } = this.state;
