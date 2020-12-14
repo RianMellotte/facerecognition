@@ -76,14 +76,11 @@ calculateFaceLocation = (data) => {
   const height = Number(image.height);
   console.log(data.outputs[0].data.regions)
   data.outputs[0].data.regions.forEach(function (region) {
-    const clarifaiFace = region.region_info.bounuding_box;
-    console.log(clarifaiFace);
-    console.log(region)
     return {
-    leftCol: clarifaiFace.left_col * width,
-    topRow: clarifaiFace.top_row * height,
-    rightCol: width - (clarifaiFace.right_col * width),
-    bottomRow: height - (clarifaiFace.bottom_row * height)
+    leftCol: region.region_info.bounuding_box.left_col * width,
+    topRow: region.region_info.bounuding_box.top_row * height,
+    rightCol: width - (region.region_info.bounuding_box.right_col * width),
+    bottomRow: height - (region.region_info.bounuding_box.bottom_row * height)
     };
  })
 }
