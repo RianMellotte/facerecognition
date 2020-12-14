@@ -74,9 +74,8 @@ calculateFaceLocation = (data) => {
   const image = document.getElementById('inputimage');
   const width = Number(image.width);
   const height = Number(image.height);
-  data.outputs[0].data.regions.forEach(function (region) {
+  return data.outputs[0].data.regions.forEach(function (region) {
     let face = region.region_info.bounding_box;
-    console.log(face);
     return {
     leftCol: face.left_col * width,
     topRow: face.top_row * height,
@@ -121,7 +120,6 @@ onSubmit = () => {
         })
         .catch(console.log)
       }
-      console.log(this.box)
       this.displayFaceBox(this.calculateFaceLocation(response))
     })
     .catch(err => console.log(err));
