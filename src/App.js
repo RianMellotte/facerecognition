@@ -75,7 +75,6 @@ calculateFaceLocation = (data) => {
   const width = Number(image.width);
   const height = Number(image.height);
   return data.outputs[0].data.regions.forEach(function (region) {
-    console.log(region.region_info.bounding_box);
     return {
     leftCol: region.region_info.bounding_box.left_col * width,
     topRow: region.region_info.bounding_box.top_row * height,
@@ -87,7 +86,7 @@ calculateFaceLocation = (data) => {
 
 
 displayFaceBox = (box) => {
-  this.setState(box);
+  this.setState({box: box}});
 }
 
 onInputChange = (event) => {
