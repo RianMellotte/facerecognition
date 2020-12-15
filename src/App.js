@@ -77,14 +77,10 @@ calculateFaceLocation = (data) => {
   const height = Number(image.height);
   console.log(clarifaiFace.left_col * width);
   return {
-    leftCol: clarifaiFace.forEach(function (face) =>  
-      face.left_col * width),
-    topRow: clarifaiFaceclarifaiFace.forEach(function (face) =>  
-      face.top_row * height),
-    rightCol: width - (clarifaiFaceclarifaiFace.forEach(function (face) =>  
-      face.right_col * width)),
-    bottomRow: height - (clarifaiFaceclarifaiFace.forEach(function (face) =>  
-      face.bottom_row * height))
+    leftCol: clarifaiFace.forEach(face => face.left_col * width),
+    topRow: clarifaiFace.forEach(face => face.top_row * height),
+    rightCol: width - (clarifaiFace.forEach(face => face.right_col * width)),
+    bottomRow: height - (clarifaiFace.forEach(face => face.bottom_row * height))
   }
 }
 
