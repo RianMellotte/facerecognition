@@ -71,24 +71,20 @@ loadUser = (data) => {
 
 
 calculateFaceLocation = (data) => {
+  const clarifaiFace = data.outputs[0].data.regions.map(regions => regions.region_info.bounding_box);
   const image = document.getElementById('inputimage');
   const width = Number(image.width);
   const height = Number(image.height);
-  const regions = data.outputs[0].data.regions;
-  return regions.forEach(function (region) {
-    let face = region.region_info.bounding_box;
-    return {
-    leftCol: face.left_col * width,
-    topRow: face.top_row * height,
-    rightCol: width - (face.right_col * width),
-    bottomRow: height - (face.bottom_row * height)
-    };
- })
+  return {
+    leftCol: clarifaiFace.left_col * width,
+    topRow: clarifaiFace.top_row * height,
+    rightCol: width - (clarifaiFace.right_col * width),
+    bottomRow: height - (clarifaiFace.bottom_row * height)
+  }
 }
 
-
 displayFaceBox = (box) => {
-  this.setState({box: box});
+  this.setState({box: box})
 }
 
 onInputChange = (event) => {
@@ -132,9 +128,9 @@ onRouteChange = (route) => {
     this.setState({isSignedIn: true})
   }
   this.setState({route: route});
-}
+} 
 
-render() {
+  render() {
     const { isSignedIn, imageUrl, route, box } = this.state;
     return (
       <div className="App">
