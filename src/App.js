@@ -75,22 +75,18 @@ calculateFaceLocation = (data) => {
   const image = document.getElementById('inputimage');
   const width = Number(image.width);
   const height = Number(image.height);
-  return {
-    leftCol: 0.5,
-    topRow: 0.5,
-    rightCol: 0.5,
-    bottomRow: 0.5
-    };
-  // return {
-  //   leftCol: clarifaiFace[0].left_col * width,
-  //   topRow: clarifaiFace[0].top_row * height,
-  //   rightCol: width - (clarifaiFace[0].right_col * width),
-  //   bottomRow: height - (clarifaiFace[0].bottom_row * height)
-  //   };
+  const faces = clarifaiFace.map(face => {
+    leftCol: face.left_col * width,
+    topRow: face.top_row * height,
+    rightCol: width - (face.right_col * width),
+    bottomRow: height - (face.bottom_row * height)
+    });
+  return faces;
   }
 
 displayFaceBox = (box) => {
   this.setState({box: box})
+  console.log(this.state.box)
 }
 
 onInputChange = (event) => {
