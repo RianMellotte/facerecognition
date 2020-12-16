@@ -76,10 +76,10 @@ calculateFaceLocation = (data) => {
   const width = Number(image.width);
   const height = Number(image.height);
   return {
-    leftCol: [0.5, 0.2],
-    topRow: [0.5, 0.2],
-    rightCol: [0.5, 0.2],
-    bottomRow: [0.5, 0.2]
+    leftCol: 0.5,
+    topRow: 0.5,
+    rightCol: 0.5,
+    bottomRow: 0.5
     };
   // return {
   //   leftCol: clarifaiFace[0].left_col * width,
