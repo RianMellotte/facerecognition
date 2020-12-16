@@ -75,14 +75,19 @@ calculateFaceLocation = (data) => {
   const image = document.getElementById('inputimage');
   const width = Number(image.width);
   const height = Number(image.height);
-  console.log(clarifaiFace.left_col * width);
   return {
-    leftCol: clarifaiFace.forEach(face => face.left_col * width),
-    topRow: clarifaiFace.forEach(face => face.top_row * height),
-    rightCol: width - (clarifaiFace.forEach(face => face.right_col * width)),
-    bottomRow: height - (clarifaiFace.forEach(face => face.bottom_row * height))
+    leftCol: [0.5, 0.2],
+    topRow: [0.5, 0.2],
+    rightCol: [0.5, 0.2],
+    bottomRow: [0.5, 0.2]
+    };
+  // return {
+  //   leftCol: clarifaiFace[0].left_col * width,
+  //   topRow: clarifaiFace[0].top_row * height,
+  //   rightCol: width - (clarifaiFace[0].right_col * width),
+  //   bottomRow: height - (clarifaiFace[0].bottom_row * height)
+  //   };
   }
-}
 
 displayFaceBox = (box) => {
   this.setState({box: box})
