@@ -87,7 +87,9 @@ calculateFaceLocation = (data) => {
   }
 
 displayFaceBox = (box) => {
-  this.setState({box: box})
+  this.setState(prevState => ({
+      box: [...prevState.box, ...box]
+    }))
   console.log(this.state.box)
 }
 
